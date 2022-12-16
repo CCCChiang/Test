@@ -1,0 +1,96 @@
+Decision Intelligence
+https://www.simplilearn.com/ice9/free_resources_article_thumb/Decision_Intelligence.jpg
+
+
+
+
+Time Sreies
+https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/10/time-series-data.jpeg
+
+
+
+
+Energy saving
+https://static.wixstatic.com/media/62e635_1325aba157b048c0812fc85606a3ef68~mv2.png/v1/fill/w_740,h_416,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/62e635_1325aba157b048c0812fc85606a3ef68~mv2.png
+
+
+,
+            'libraries':{
+                'my_tag':'templatetags.my_tag',
+            }
+
+
+
+Multi-head CNN–RNN for multi-time series anomaly detection: An industrial case study
+https://nottingham-repository.worktribe.com/index.php/preview/2315217/Multi_Time_Series_Anomaly_Detection_for_Industry_4_0__Neurocomputing_.pdf
+2109133
+Time Series
+2019
+Mikel Canizo
+Neurocomputing
+Deep Learning, Anomaly detection, Convolutional Neural Networks, Recurrent Neural Networks, Multi-sensor systems, Industry 4.0
+10.1016/j.neucom.2019.07.034
+
+多變量時序預測之異常檢測;y是二元類別型變數
+
+用20個sensor，對電梯進行異常監控的預測，Multi-head Conv1d的表現在RNN, LSTM, GRU, Bi-LSTM, Bi-GRU皆比 Multi-channel Conv1d還好;sensor數量不同的遷移式學習，表現與原數量sensor的效果差不多，有時候會更好
+
+提出了一種基於深度學習的有監督多時間序列異常檢測方法，該方法結合了卷積神經網絡和遞歸神經網絡以不同的方式;不同於其他方法，使用獨立的卷積神經網絡，即所謂的捲積頭來處理，在多sensor系統中進行異常檢測;單獨處理每個sensor，避免了數據預處理的需要，並允許更多為每種類型的sensor量身定制的架構
+
+不需要對資料做前處理;時間序列被獨立處理以處理異構sensor;能適應新的sensor配置;可以抓到單元動作;工業場景中檢測異常有不錯的效能表現
+
+模型參數量龐大
+
+CPU: Intel i7-6850K 3.6 Ghz Box
+RAM: 32 GB
+GPU: CUDA 9.2
+Keras 2.2.0
+Tensorflow 1.6.0
+
+
+TranAD: Deep Transformer Networks for Anomaly Detection in Multivariate Time Series Data
+https://arxiv.org/pdf/2201.07284.pdf
+2109133
+Time Series
+2022
+Shreshth Tuli
+arXiv
+Transformer, Anomaly Detection, Multivariate Time Series
+2201.07284v6
+多變量時序異常檢測，沒有額外限制
+利用9種公開的時序資料與當今各個模型做比較，如MERLIN、DAGMM...等，效果整體來說皆比較優
+TranAD 利用自我調節和對抗性訓練以放大錯誤並獲得訓練穩定性。此外，元學習使其能夠識別數據趨勢，具體來說，TranAD 在完整和有限的訓練中分別提高了 17% 和 11% 的 F1 分數;夠正確識別出問題的根本原因高達 75% 的檢測到的異常，高於最先進的楷模
+透過Few Shot Learning，可用於少量多樣的異常資料的標記;能查找異常根因;訓練速度較快
+尚未有明顯的缺點
+
+10.1016/j.neucom.2019.07.034
+2109133
+2022-08-31
+https://github.com/salesforce/ETSformer
+AI365
+15分
+可以執行，結果尚未驗證
+CPU; GPU
+參數很多; 注意帥哥
+
+
+
+style="background-image: url('https://pic.52112.com/180807/EPS-180807_12/flEqxbDgzH_small.jpg');"
+
+
+ETSformer: Exponential Smoothing Transformers for Time-series Forecasting
+https://arxiv.org/pdf/2202.01381.pdf
+https://github.com/salesforce/ETSformer
+2022
+Gerald Woo
+arXiv
+Exponential Smoothing;Transformers;Time Series
+多變量時序預測，y是數值型變數
+模型表現對於中長期的時序預測表現不錯;能抓到季節性的特徵;有引入統計時序概念作處理，結果具有可解釋性;運算速度比原始transformer-based的模型好
+尚未加入額外周期因素，如: 假日周期
+
+近年來，Transformer已被積極研究用於時間序列預測。雖然經常在各種場景中顯示出可喜的結果，但傳統的Transformer並沒有被設計為充分利用時間序列數據的特徵，因此受到一些基本限制，例如，它們通常不可分解或不可解釋，並且對於長期使用既不有效也不高效。在本文中，我們提出了 ETSformer，這是一種新穎的時間序列 Transformer 架構，它利用指數平滑原理來改進 Transformer 以進行時間序列預測。特別是，受時間序列預測中經典的指數平滑方法的啟發，我們提出了新的指數平滑注意（ESA）和頻率注意（FA）來代替普通Transformer中的自我注意機制，從而提高準確性和效率。基於這些，我們重新設計了帶有模塊化分解塊的 Transformer 架構，以便它可以學習將時間序列數據分解為可解釋的時間序列組件，例如水平、增長和季節性。在各種時間序列基準上進行的大量實驗驗證了所提出方法的有效性和優勢。程式碼可在 https://github.com/salesforce/ETSformer 獲得
+
+受用於時間序列預測的經典指數平滑方法和新興的 Transformer 方法的啟發，我們提出了 ETSformer，這是一種基於 Transformer 的新型時間序列預測架構，它學習水平、增長和季節性潛在表示及其複雜的依賴關係。 ETSformer 利用了新穎的指數平滑注意和頻率注意機制，它們在時間序列建模方面比普通的自我注意機制更有效，同時實現了 O(Llog L) 複雜度，其中 L 是回溯窗口的長度。 我們廣泛的實證評估表明，ETSformer 實現了最先進的性能，分別在多變量和單變量預測的多種設置中，擊敗了競爭基線。 未來的方向包括包括額外的協變量，例如假期指標和其他虛擬變量，以考慮 FA 機制無法捕捉的假期效應
+
+
